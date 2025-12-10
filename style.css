@@ -1,0 +1,704 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul,
+ol,
+li {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+a {
+  color: #111111;
+  text-decoration: none;
+}
+
+.img {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: "Cormorant Garamond", serif;
+  color: #111111;
+  background-color: #fbfaf9;
+}
+
+.container {
+  max-width: 1168px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.page-header {
+  background-color: #e1d2ba;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.page-nav {
+  color: #fbfaf9;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px;
+  padding-left: 50px;
+}
+
+.menu {
+  display: flex;
+  gap: 15px;
+}
+
+.page-logo {
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 25px;
+  height: 25px;
+}
+
+.menu-item {
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.menu-item:hover {
+  color: #fbfaf9;
+}
+
+.menu-item:focus {
+  color: #fbfaf9;
+}
+
+.hero {
+  background-image: url(./images/hero-img.jpg);
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  position: relative;
+}
+
+.hero-main-title {
+  font-size: 4rem;
+  color: #fbfaf9;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero-pgh {
+  font-size: 1.8rem;
+  color: #fbfaf9;
+  line-height: 1.6;
+  text-align: start;
+  max-width: 900px;
+  margin-bottom: 50px;
+}
+
+.section-one-link {
+  display: inline-block;
+  font-size: 1 rem;
+  padding: 14px 40px;
+  border: 0.7px solid #fbfaf9;
+  color: #fbfaf9;
+  text-align: center;
+}
+
+.section-one-link:hover,
+.section-one-link:focus {
+  color: #38322d;
+  border-color: #241506;
+  outline: 3px solid #241506;
+}
+
+.about-me {
+  margin-top: 100px;
+  padding: 0 50px;
+}
+
+.about-me-title {
+  margin-bottom: 40px;
+}
+
+.about-me-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.about-me-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-me-descr {
+  flex: 1;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid #241506;
+  width: 80%;
+  margin: 50px auto;
+  opacity: 0.5;
+}
+
+.portfolio {
+  margin-top: 50px;
+}
+.carousel-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  height: 800px;
+  object-fit: cover;
+  border: 1px solid #070707;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 0.7px solid #241506;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus {
+  width: 75px;
+  height: 75px;
+}
+
+.carousel-btn::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #241506;
+  border-right: 2px solid #241506;
+  transform: rotate(45deg);
+  transition: border-color 0.2s ease;
+}
+
+.carousel-btn.prev::before {
+  transform: rotate(225deg);
+}
+
+.carousel-btn.next::before {
+  transform: rotate(45deg);
+}
+
+.carousel-btn.prev {
+  left: -100px;
+}
+
+.carousel-btn.next {
+  right: -100px;
+}
+
+.session-rates {
+  margin-top: 50px;
+}
+
+.session-rates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.session-rates-item {
+  display: flex;
+  gap: 150px;
+}
+
+.session-pic {
+  width: 300px;
+  height: 300px;
+}
+
+.session-rates-item-pgh {
+  padding-top: 3px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.book-now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100px;
+  margin-left: 513px;
+  border: 0.7px solid #070707;
+  color: #070707;
+}
+
+.book-now:hover,
+.book-now:focus {
+  color: #38322d;
+  border-color: #241506;
+  outline: 3px solid #241506;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#bookingForm input,
+#bookingForm select,
+#bookingForm button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#bookingForm button {
+  background-color: #070707;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#bookingForm button:hover {
+  background-color: #38322d;
+}
+
+.few-notes-title {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.few-notes-title-scd {
+  margin-top: 20px;
+  padding-left: 10px;
+  border-left: 2px solid #000;
+}
+
+.few-notes-pgh {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.contact-sec {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+.contact {
+  margin-top: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color: #e1d2ba;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-descr {
+  margin: 0;
+  font-size: 16px;
+  color: #1a1a1a;
+}
+
+.contact-descr:hover,
+.contact-descr:focus {
+  color: #fff;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  gap: 700px;
+}
+
+.contact-item-info {
+  padding-top: 50px;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .page-header {
+    width: 100%;
+    height: 60px;
+  }
+
+  .page-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .page-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: auto;
+    position: static;
+  }
+
+  .menu-item {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .hero {
+    padding: 30px;
+    height: auto;
+    text-align: center;
+  }
+
+  .hero-main-title {
+    font-size: 2rem;
+    margin-top: 50px;
+  }
+
+  .hero-pgh {
+    font-size: 1rem;
+    margin: 20px 0;
+  }
+
+  .section-one-link {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  .about-me {
+    margin-top: 50px;
+    padding: 0 0px;
+  }
+  .about-me-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .about-me-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-me-descr {
+    text-align: center;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .carousel-btn {
+    height: 50px;
+    width: 50px;
+  }
+
+  .carousel-btn.prev {
+    left: -65px;
+  }
+
+  .carousel-btn.next {
+    height: 50px;
+    width: 50px;
+    right: -65px;
+  }
+
+  .book-now {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .contact-container {
+    gap: 550px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-header {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    background-color: #e1d2ba;
+  }
+
+  .page-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+  }
+
+  .page-logo {
+    width: 30px;
+    height: 30px;
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 201;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu-item {
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero {
+    padding: 20px;
+    height: auto;
+    text-align: center;
+  }
+
+  .hero-main-title {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    padding-top: 0;
+  }
+
+  .hero-pgh {
+    font-size: 0.9rem;
+    margin: 20px auto;
+    padding-top: 10px;
+  }
+
+  .section-one-link {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    width: 120px;
+    top: auto;
+    transform: none;
+  }
+
+  .about-me-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .about-me-pic {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-me-descr {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .carousel-wrapper {
+    max-width: 100%;
+    margin: 0 auto 30px;
+  }
+
+  .carousel-item {
+    height: auto;
+  }
+
+  .carousel img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .carousel-btn.prev {
+    left: 5px;
+  }
+
+  .carousel-btn.next {
+    right: 5px;
+  }
+
+  .session-rates-item {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .session-pic {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  .session-rates-item-pgh {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .few-notes-title {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .few-notes-title-scd {
+    margin-top: 10px;
+  }
+
+  .few-notes-pgh {
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .contact-container {
+    gap: 70px;
+  }
+
+  .contact-item-info {
+    padding-top: 55px;
+    text-align: end;
+  }
+}

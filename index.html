@@ -1,0 +1,248 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+  <body>
+    <header class="page-header">
+      <nav class="page-nav">
+        <a><img class="page-logo" src="./images/icon-logo.png" alt="Logo" /></a>
+
+        <!-- Гамбургер -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul class="menu" id="menu">
+          <li><a class="menu-item" href="#about-me">ABOUT ME</a></li>
+          <li><a class="menu-item" href="#portfolio">PORTFOLIO</a></li>
+          <li><a class="menu-item" href="#session-rates">SESSION RATES</a></li>
+          <li><a class="menu-item" href="#few-notes">FEW NOTES</a></li>
+          <li><a class="menu-item" href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1 class="hero-main-title">Capturing Moments, Creating Memories</h1>
+          <p class="hero-pgh">
+            Professional photography that transforms ordinary moments into
+            timeless images. I specialize in capturing the essence of life, from
+            fleeting emotions to the beauty of everyday scenes. Every photograph
+            tells a story, reflecting authenticity, light, and emotion. Explore
+            my portfolio to see how moments become memories, and discover the
+            artistry behind each carefully crafted shot.
+          </p>
+          <a class="section-one-link" href="#about-me">LEARN MORE</a>
+        </div>
+      </section>
+
+      <section id="about-me" class="about-me">
+        <div class="container">
+          <h2 class="about-me-title">About Me</h2>
+          <div class="about-me-container">
+            <img
+              class="about-me-pic"
+              src="./images/about-me.jpg"
+              alt="profile pic"
+            />
+            <div class="about-me-descr">
+              <p class="about-me-pgh">
+                Hi, I’m Anastasiia, a passionate photographer who loves telling
+                stories through images. I aim to capture genuine emotions,
+                unique personalities, and the beauty of life as it unfolds.
+                Every session is an opportunity to preserve moments you’ll
+                cherish forever. I focus on creating a relaxed, comfortable
+                atmosphere so that natural expressions and authentic connections
+                shine through. Through my lens, I hope to turn fleeting moments
+                into lasting memories.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+          <h2 class="portfolio-title">Portfolio</h2>
+          <div class="carousel-wrapper">
+            <div class="carousel">
+              <div class="carousel-track">
+                <img src="./images/portfolio1.jpg" class="carousel-item" />
+                <img src="./images/portfolio2.jpg" class="carousel-item" />
+                <img src="./images/portfolio3.jpg" class="carousel-item" />
+                <img src="./images/portfolio4.jpg" class="carousel-item" />
+                <img src="./images/portfolio5.jpg" class="carousel-item" />
+                <img src="./images/portfolio6.jpg" class="carousel-item" />
+                <img src="./images/portfolio7.jpg" class="carousel-item" />
+                <img src="./images/portfolio8.jpg" class="carousel-item" />
+                <img src="./images/portfolio9.jpg" class="carousel-item" />
+                <img src="./images/portfolio10.jpg" class="carousel-item" />
+              </div>
+            </div>
+            <button class="carousel-btn prev"></button>
+            <button class="carousel-btn next"></button>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="session-rates" class="session-rates">
+        <div class="container">
+          <h2 class="session-rates-title">Session Rates</h2>
+          <div class="session-rates-list">
+            <div class="session-rates-item">
+              <div><img class="session-pic" src="./images/package1.jpg" /></div>
+              <div>
+                <h3 class="session-rates-item-title">Package 1</h3>
+                <p class="session-rates-item-pgh">price</p>
+                <p class="session-rates-item-pgh">
+                  Lorem ipsum dolor sit amet consectetur...
+                </p>
+              </div>
+            </div>
+            <div class="session-rates-item">
+              <div><img class="session-pic" src="./images/package2.jpg" /></div>
+              <div>
+                <h3 class="session-rates-item-title">Package 2</h3>
+                <p class="session-rates-item-pgh">price</p>
+                <p class="session-rates-item-pgh">
+                  Lorem ipsum dolor sit amet consectetur...
+                </p>
+              </div>
+            </div>
+            <div class="session-rates-item">
+              <div><img class="session-pic" src="./images/package3.jpg" /></div>
+              <div>
+                <h3 class="session-rates-item-title">Package 3</h3>
+                <p class="session-rates-item-pgh">price</p>
+                <p class="session-rates-item-pgh">
+                  Lorem ipsum dolor sit amet consectetur...
+                </p>
+              </div>
+            </div>
+            <div id="bookNowSection">
+              <a class="book-now" id="openModal">BOOK NOW</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="bookingModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Book Your Session</h2>
+          <form
+            action="https://formspree.io/f/mqardojp"
+            method="POST"
+            id="bookingForm"
+          >
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+            <label for="package">Package:</label>
+            <select id="package" name="package">
+              <option value="package1">Package 1</option>
+              <option value="package2">Package 2</option>
+              <option value="package3">Package 3</option>
+            </select>
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required />
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time" required />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <section id="few-notes" class="few-notes">
+        <div class="container">
+          <h2 class="few-notes-title">Few Notes...</h2>
+          <h3 class="few-notes-title-scd">Raw Files</h3>
+          <p class="few-notes-pgh">
+            Would you like to have every moment from your session? With our raw
+            files option, you can receive all the original photos exactly as
+            they were captured. This is perfect if you want the freedom to edit
+            them yourself, preserve every candid shot, or simply keep a complete
+            record of your experience.
+          </p>
+          <h3 class="few-notes-title-scd">Edited Photos</h3>
+          <p class="few-notes-pgh">
+            Your final images will be thoughtfully edited with basic color and
+            light correction to enhance the natural beauty of each photo. The
+            goal is to create images that feel vibrant, authentic, and
+            timeless—perfect for sharing, framing, or keeping as cherished
+            memories.
+          </p>
+          <h3 class="few-notes-title-scd">Studio Rent</h3>
+          <p class="few-notes-pgh">
+            Please note that studio rental is not included in the session price.
+            We can, however, help you select the ideal location to match the
+            mood and style of your photoshoot, whether that’s a cozy indoor
+            studio or a stunning outdoor setting. not included in the session
+            price...
+          </p>
+          <h3 class="few-notes-title-scd">Unique Gift</h3>
+          <p class="few-notes-pgh">
+            A photoshoot is more than just pictures—it’s an experience. Giving a
+            session as a gift creates memories that last a lifetime. It’s
+            thoughtful, personal, and truly one-of-a-kind—a way to show someone
+            you care, while capturing moments they’ll treasure forever.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="container">
+          
+          <h2 class="contact-title">Contact</h2>
+          <div class="contact-container">
+            <div class="contact-sec">
+            
+            <div class="contact-item">
+              <img class="contact-icon" src="./images/phone.svg" />
+              <p class="contact-descr">+XXXXXXXXXX</p>
+            </div>
+            <div class="contact-item">
+              <img class="contact-icon" src="./images/email.svg" />
+              <p class="contact-descr">test@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <img class="contact-icon" src="./images/instagram.svg" />
+              <p class="contact-descr">anastasiixoxo.ph</p>
+            </div>
+            
+          </div>
+
+          <div class="contact-item-info">
+              <p>© 2025 Your Photo Studio. All rights reserved.</p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

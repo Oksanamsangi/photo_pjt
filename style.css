@@ -125,12 +125,16 @@ body {
 }
 
 .section-one-link {
-  display: inline-block;
+  display: block;
+  width: 200px;
   font-size: 1 rem;
   padding: 14px 40px;
   border: 0.7px solid #fbfaf9;
   color: #fbfaf9;
   text-align: center;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-one-link:hover,
@@ -255,6 +259,10 @@ body {
   right: -100px;
 }
 
+.session-descr {
+  padding-top: 250px;
+}
+
 .session-rates {
   margin-top: 50px;
 }
@@ -266,14 +274,58 @@ body {
   margin-top: 20px;
 }
 
+.session-rates-item-title {
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.session-rates-item-price {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.session-rates-item-pgh {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #666;
+}
+
+.session-rates-item-pgh span::before {
+  content: "— ";
+  color: #bbb;
+}
+
 .session-rates-item {
   display: flex;
   gap: 150px;
 }
 
 .session-pic {
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 600px;
+  position: relative;
+  object-fit: cover;
+  border-radius: 6px;
+  filter: grayscale(10%) contrast(1.05);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.4s ease;
+}
+
+/* subtle shadow */
+.session-pic {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* hover effect */
+.session-pic:hover {
+  transform: translateY(-6px) scale(1.02);
+  filter: grayscale(0%) contrast(1.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
 }
 
 .session-rates-item-pgh {
@@ -300,57 +352,132 @@ body {
   outline: 3px solid #241506;
 }
 
+/* ======================
+   BOOKING MODAL — EDITORIAL
+   ====================== */
+
 .modal {
-  display: none;
   position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+  box-sizing: border-box;
   z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 20px 30px;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 500px;
-  position: relative;
-}
+  background-color: #fbfaf9;
+  padding: 36px 30px;
+  border-radius: 12px;
+  box-shadow: 0 35px 70px rgba(0,0,0,0.18);
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#bookingForm input,
-#bookingForm select,
-#bookingForm button {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  max-width: 550px;
+  box-sizing: border-box;
 }
 
+
+
+/* subtle animation */
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* title */
+.modal-content h2 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 28px;
+  letter-spacing: 0.02em;
+}
+
+/* close button */
+.close {
+  font-size: 22px;
+  color: #777;
+  transition: opacity 0.3s ease;
+}
+
+.close:hover {
+  opacity: 0.5;
+}
+
+/* form layout */
+#bookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* labels */
+#bookingForm label {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #777;
+}
+
+/* inputs & select */
+#bookingForm input,
+#bookingForm select {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+#bookingForm input:focus,
+#bookingForm select:focus {
+  outline: none;
+  border-color: #241506;
+}
+
+/* submit button */
 #bookingForm button {
-  background-color: #070707;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #241506;
+  border: 1px solid #241506;
+  transition: all 0.3s ease;
 }
 
 #bookingForm button:hover {
-  background-color: #38322d;
+  background-color: #241506;
+  color: #fbfaf9;
 }
+
+.form-message {
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
 
 .few-notes-title {
   margin-top: 50px;
@@ -367,6 +494,11 @@ body {
   margin-top: 5px;
   font-size: 1.2rem;
   line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 16px;
+  color: #666;
 }
 
 .contact-sec {
@@ -376,43 +508,70 @@ body {
   padding-top: 20px;
 }
 
+/* ======================
+   CONTACT — MINIMAL STYLE
+   ====================== */
+
 .contact {
-  margin-top: 50px;
-  padding-bottom: 20px;
-  padding-top: 20px;
   background-color: #e1d2ba;
+  height: auto;
+  padding-top: 30px;
 }
 
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.contact-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.contact-descr {
-  margin: 0;
-  font-size: 16px;
-  color: #1a1a1a;
-}
-
-.contact-descr:hover,
-.contact-descr:focus {
-  color: #fff;
+.contact-title {
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 50px;
 }
 
 .contact-container {
+  padding-bottom: 20px;
   display: flex;
-  flex-direction: row;
-  gap: 700px;
+  justify-content: space-between;
+  gap: 120px;
+  align-items: flex-start;
 }
 
+/* left column */
+.contact-sec {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* contact item */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* icons */
+.contact-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+}
+
+/* text */
+.contact-descr {
+  font-size: 16px;
+  color: #241506;
+  transition: opacity 0.3s ease;
+}
+
+.contact-descr:hover {
+  opacity: 0.6;
+}
+
+/* right column (copyright) */
 .contact-item-info {
-  padding-top: 50px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #555;
+  padding-top: 6px;
 }
 
 /* Tablet */
@@ -518,13 +677,23 @@ body {
     right: -65px;
   }
 
+  .session-rates-item {
+    gap: 50px;
+  }
+
   .book-now {
     margin-right: auto;
     margin-left: auto;
   }
 
   .contact-container {
-    gap: 550px;
+    padding-bottom: 20px;
+    padding-right: 100px;
+    gap: 200px;
+  }
+
+  .contact-item-info {
+    padding-top: 45px;
   }
 }
 
@@ -638,6 +807,10 @@ body {
     text-align: center;
   }
 
+  .portfolio-title {
+    padding-bottom: 30px;
+  }
+
   .carousel-wrapper {
     max-width: 100%;
     margin: 0 auto 30px;
@@ -660,6 +833,10 @@ body {
   .carousel-btn.next {
     right: 5px;
   }
+  .session-rates-title {
+    padding-left: 20px;
+    padding-bottom: 30px;
+  }
 
   .session-rates-item {
     flex-direction: column;
@@ -668,10 +845,18 @@ body {
     text-align: center;
   }
 
+  .session-descr {
+    padding-top: 40px;
+  }
+
   .session-pic {
     width: 100%;
     height: auto;
     max-width: 300px;
+  }
+
+  .session-rates-list {
+    margin-top: 0;
   }
 
   .session-rates-item-pgh {
@@ -680,8 +865,9 @@ body {
   }
 
   .few-notes-title {
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 50px;
+    text-align: left;
+    padding-bottom: 30px;
   }
 
   .few-notes-title-scd {
@@ -694,11 +880,17 @@ body {
   }
 
   .contact-container {
-    gap: 70px;
+    gap: 0px;
+    padding-bottom: 20px;
+    padding-right: 0;
+  }
+
+  .contact-title {
+    margin-bottom: 20px;
   }
 
   .contact-item-info {
-    padding-top: 55px;
+    padding-top: 15px;
     text-align: end;
   }
 }

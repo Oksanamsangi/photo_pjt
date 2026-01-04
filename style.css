@@ -89,6 +89,16 @@ body {
   color: #fbfaf9;
 }
 
+.menu-cam .page-logo {
+  transition: filter 0.3s ease;
+}
+
+.menu-cam:hover .page-logo {
+  filter: invert(96%) sepia(0%) saturate(0%) hue-rotate(190deg) brightness(100%) contrast(100%);
+}
+
+
+
 .hero {
   background-image: url(./images/hero-img.jpg);
   width: 100%;
@@ -675,14 +685,14 @@ body {
   }
 
   .menu {
-    display: none; 
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     width: 100%;
     background-color: #fff;
     position: absolute;
-    top: 60px; 
+    top: 60px;
     left: 0;
     padding: 10px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -690,7 +700,7 @@ body {
   }
 
   .menu.active {
-    display: flex; 
+    display: flex;
   }
 
   .menu-item {

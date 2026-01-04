@@ -39,8 +39,8 @@ body {
 
 .container {
   max-width: 1168px;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -57,8 +57,8 @@ body {
   color: #fbfaf9;
   display: flex;
   justify-content: space-between;
-  padding-right: 100px;
   padding-left: 50px;
+  padding-right: 100px;
 }
 
 .menu {
@@ -68,26 +68,23 @@ body {
 
 .page-logo {
   display: block;
-  margin-top: 30px;
-  margin-bottom: 30px;
   width: 25px;
   height: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .menu-item {
   display: block;
   padding-top: 30px;
   padding-bottom: 30px;
-  font-weight: 500;
   font-size: 14px;
-  line-height: 1.4;
+  font-weight: 500;
   letter-spacing: -0.02em;
+  line-height: 1.4;
 }
 
-.menu-item:hover {
-  color: #fbfaf9;
-}
-
+.menu-item:hover,
 .menu-item:focus {
   color: #fbfaf9;
 }
@@ -127,14 +124,14 @@ body {
 .section-one-link {
   display: block;
   width: 200px;
-  font-size: 1 rem;
+  font-size: 1rem;
   padding: 14px 40px;
   border: 0.7px solid #fbfaf9;
   color: #fbfaf9;
   text-align: center;
-  margin-top: 200px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 200px;
 }
 
 .section-one-link:hover,
@@ -159,14 +156,14 @@ body {
   align-items: flex-start;
   gap: 60px;
   max-width: 900px;
-  margin: 30px auto;
 }
 
 .about-me-pic {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   object-fit: cover;
+  margin: auto;
 }
 
 .about-me-descr {
@@ -175,7 +172,6 @@ body {
   line-height: 1.8;
 }
 
-/* Divider */
 .divider {
   border: none;
   border-top: 1px solid #241506;
@@ -187,6 +183,7 @@ body {
 .portfolio {
   margin-top: 50px;
 }
+
 .carousel-wrapper {
   position: relative;
   max-width: 900px;
@@ -206,7 +203,8 @@ body {
   flex: 0 0 100%;
   height: 800px;
   object-fit: cover;
-  border: 1px solid #070707;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
 .carousel-btn {
@@ -218,18 +216,18 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
   border: 0.7px solid #241506;
   border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
 }
 
 .carousel-btn:hover,
 .carousel-btn:focus {
-  width: 75px;
-  height: 75px;
+  background-color: rgba(255, 255, 255, 1);
+  border-color: #241506;
 }
 
 .carousel-btn::before {
@@ -314,24 +312,13 @@ body {
   border-radius: 6px;
   filter: grayscale(10%) contrast(1.05);
   transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.4s ease;
-}
-
-/* subtle shadow */
-.session-pic {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* hover effect */
 .session-pic:hover {
   transform: translateY(-6px) scale(1.02);
   filter: grayscale(0%) contrast(1.1);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
-}
-
-.session-rates-item-pgh {
-  padding-top: 3px;
-  font-size: 1.2rem;
-  line-height: 1.8;
 }
 
 .book-now {
@@ -339,8 +326,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 30px;
-  width: 100px;
-  margin-left: 513px;
+  width: 200px;
+  margin: auto;
   border: 0.7px solid #070707;
   color: #070707;
 }
@@ -352,21 +339,16 @@ body {
   outline: 3px solid #241506;
 }
 
-/* ======================
-   BOOKING MODAL — EDITORIAL
-   ====================== */
-
 .modal {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   box-sizing: border-box;
   z-index: 1000;
-
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
@@ -381,28 +363,12 @@ body {
   background-color: #fbfaf9;
   padding: 36px 30px;
   border-radius: 12px;
-  box-shadow: 0 35px 70px rgba(0,0,0,0.18);
-
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.18);
   width: 100%;
   max-width: 550px;
   box-sizing: border-box;
 }
 
-
-
-/* subtle animation */
-@keyframes modalFade {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* title */
 .modal-content h2 {
   font-size: 22px;
   text-align: center;
@@ -410,7 +376,6 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* close button */
 .close {
   font-size: 22px;
   color: #777;
@@ -421,14 +386,12 @@ body {
   opacity: 0.5;
 }
 
-/* form layout */
 #bookingForm {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-/* labels */
 #bookingForm label {
   font-size: 13px;
   letter-spacing: 0.08em;
@@ -436,7 +399,6 @@ body {
   color: #777;
 }
 
-/* inputs & select */
 #bookingForm input,
 #bookingForm select {
   font-family: "Cormorant Garamond", serif;
@@ -454,7 +416,6 @@ body {
   border-color: #241506;
 }
 
-/* submit button */
 #bookingForm button {
   margin-top: 20px;
   padding: 12px;
@@ -478,7 +439,7 @@ body {
   text-align: center;
 }
 
-.few-notes{
+.few-notes {
   padding-bottom: 30px;
 }
 
@@ -495,12 +456,11 @@ body {
 
 .few-notes-pgh {
   margin-top: 5px;
-  font-size: 1.2rem;
+  font-size: 16px;
   line-height: 1.8;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 16px;
   color: #666;
 }
 
@@ -511,13 +471,8 @@ body {
   padding-top: 20px;
 }
 
-/* ======================
-   CONTACT — MINIMAL STYLE
-   ====================== */
-
 .contact {
   background-color: #e1d2ba;
-  height: auto;
   padding-top: 30px;
 }
 
@@ -537,28 +492,18 @@ body {
   align-items: flex-start;
 }
 
-/* left column */
-.contact-sec {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-/* contact item */
 .contact-item {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-/* icons */
 .contact-icon {
   width: 18px;
   height: 18px;
   opacity: 0.7;
 }
 
-/* text */
 .contact-descr {
   font-size: 16px;
   color: #241506;
@@ -569,15 +514,12 @@ body {
   opacity: 0.6;
 }
 
-/* right column (copyright) */
 .contact-item-info {
   font-size: 13px;
   letter-spacing: 0.04em;
   color: #555;
   padding-top: 6px;
 }
-
-/* Tablet */
 
 @media (max-width: 1024px) {
   .page-header {
@@ -607,13 +549,13 @@ body {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    width: auto;
     position: static;
+    width: auto;
   }
 
   .menu-item {
-    padding: 10px 15px;
     font-size: 16px;
+    padding: 10px 15px;
   }
 
   .hero {
@@ -634,19 +576,19 @@ body {
 
   .section-one-link {
     display: inline-block;
-    margin-top: 30px;
     font-size: 1rem;
     padding: 12px 25px;
+    margin-top: 30px;
   }
 
   .about-me {
     margin-top: 50px;
-    padding: 0 0px;
+    padding: 0;
   }
+
   .about-me-container {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
   }
 
   .about-me-pic {
@@ -660,24 +602,21 @@ body {
 
   .carousel-wrapper {
     position: relative;
-    max-width: 660px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .carousel-btn {
-    height: 50px;
     width: 50px;
+    height: 50px;
   }
 
   .carousel-btn.prev {
-    left: -65px;
+    left: 5px;
   }
 
   .carousel-btn.next {
-    height: 50px;
-    width: 50px;
-    right: -65px;
+    right: 5px;
   }
 
   .session-rates-item {
@@ -685,12 +624,10 @@ body {
   }
 
   .book-now {
-    margin-right: auto;
-    margin-left: auto;
+    margin: auto;
   }
 
   .contact-container {
-    padding-bottom: 20px;
     padding-right: 100px;
     gap: 200px;
   }
@@ -720,7 +657,6 @@ body {
   .page-logo {
     width: 30px;
     height: 30px;
-    display: block;
   }
 
   .hamburger {
@@ -733,7 +669,6 @@ body {
   }
 
   .hamburger span {
-    display: block;
     width: 25px;
     height: 3px;
     background-color: #333;
@@ -790,14 +725,11 @@ body {
     margin: 30px auto;
     text-align: center;
     width: 120px;
-    top: auto;
-    transform: none;
   }
 
   .about-me-container {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
   }
 
   .about-me-pic {
@@ -836,6 +768,7 @@ body {
   .carousel-btn.next {
     right: 5px;
   }
+
   .session-rates-title {
     padding-left: 20px;
     padding-bottom: 30px;
@@ -869,22 +802,15 @@ body {
 
   .few-notes-title {
     margin-top: 50px;
-    text-align: left;
     padding-bottom: 30px;
   }
 
-  .few-notes-title-scd {
-    margin-top: 10px;
-  }
-
   .few-notes-pgh {
-    margin-top: 5px;
     text-align: center;
   }
 
   .contact-container {
-    gap: 0px;
-    padding-bottom: 20px;
+    gap: 0;
     padding-right: 0;
   }
 

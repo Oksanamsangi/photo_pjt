@@ -1,5 +1,3 @@
-// ——————— CAROUSEL ———————
-
 const track = document.querySelector(".carousel-track");
 const items = Array.from(document.querySelectorAll(".carousel-item"));
 const prevBtn = document.querySelector(".prev");
@@ -13,6 +11,7 @@ track.insertBefore(lastClone, items[0]);
 
 const allItems = Array.from(track.children);
 let currentIndex = 1;
+
 track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
 function updateCarousel(animate = true) {
@@ -41,8 +40,6 @@ track.addEventListener("transitionend", () => {
   }
 });
 
-// ——————— Swipe / Drag ———————
-
 let startX = 0;
 let isDragging = false;
 
@@ -63,122 +60,115 @@ track.addEventListener("touchmove", (e) => {
 track.addEventListener("touchend", (e) => {
   if (!isDragging) return;
   isDragging = false;
+
   const diff = e.changedTouches[0].clientX - startX;
   if (diff < -50) nextBtn.click();
   else if (diff > 50) prevBtn.click();
   else updateCarousel();
 });
 
-// ——————— Mouse Wheel ———————
-
 let wheelTimeout = null;
+
 track.addEventListener("wheel", (e) => {
   if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
     e.preventDefault();
     if (wheelTimeout) return;
+
     if (e.deltaX > 10) nextBtn.click();
     else if (e.deltaX < -10) prevBtn.click();
+
     wheelTimeout = setTimeout(() => {
       wheelTimeout = null;
     }, 300);
   }
 });
 
-// ——————— MODAL ———————
-
 const modal = document.getElementById("bookingModal");
 const openModalBtn = document.getElementById("openModal");
 const closeBtn = document.querySelector(".modal .close");
 
-// Відкриття модалки
 openModalBtn.addEventListener("click", () => {
   modal.classList.add("active");
-  document.body.style.overflow = "hidden"; // блокуємо скрол сторінки
+  document.body.style.overflow = "hidden";
 });
 
-// Закриття через Х
-closeBtn.addEventListener("click", () => {
-  modal.classList.remove("active");
-  document.body.style.overflow = ""; // повертаємо скрол
-});
-
-// Закриття при кліку на фон
+closeBtn.addEventListener("click", closeModal);
 modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-  }
+  if (e.target === modal) closeModal();
 });
 
-// ——————— FORM SUBMIT ———————
+function closeModal() {
+  modal.classList.remove("active");
+  document.body.style.overflow = "";
+}
 
-document
-  .getElementById("bookingForm")
-  .addEventListener("submit", async function (e) {
-    e.preventDefault();
+const form = document.getElementById("bookingForm");
+const messageEl = document.getElementById("formMessage");
 
-    const formData = new FormData(this);
-    const messageEl = document.getElementById("formMessage");
-    messageEl.textContent = ""; // очищаємо повідомлення
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
 
-    try {
-      const response = await fetch(this.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
+  const formData = new FormData(this);
+  messageEl.textContent = "";
 
-      if (response.ok) {
-        // Показуємо успішне повідомлення
-        messageEl.textContent =
-          "Thank you! Your session request has been sent.";
-        messageEl.style.color = "green";
+  try {
+    const response = await fetch(this.action, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    });
 
-        // очищення форми
-        this.reset();
+    if (response.ok) {
+      messageEl.textContent = "Thank you! Your session request has been sent.";
+      messageEl.style.color = "green";
+      this.reset();
 
-        // Після затримки закриваємо модалку
-        setTimeout(() => {
-          modal.classList.remove("active");
-          document.body.style.overflow = ""; // дозволити скрол
-          messageEl.textContent = ""; // очистити текст
-        }, 1800);
-      } else {
-        // Якщо прийшла помилка від сервера
-        const data = await response.json();
-        if (data.errors) {
-          messageEl.textContent = data.errors
-            .map((err) => err.message)
-            .join(", ");
-        } else {
-          messageEl.textContent = "Oops! Something went wrong, try again.";
-        }
-        messageEl.style.color = "red";
-      }
-    } catch (error) {
-      // Якщо мережа або інша помилка
-      messageEl.textContent = "Error submitting form. Check your connection.";
+      setTimeout(() => {
+        closeModal();
+        messageEl.textContent = "";
+      }, 1800);
+    } else {
+      const data = await response.json();
+      messageEl.textContent = data.errors
+        ? data.errors.map((err) => err.message).join(", ")
+        : "Oops! Something went wrong, try again.";
       messageEl.style.color = "red";
     }
-  });
+  } catch {
+    messageEl.textContent = "Error submitting form. Check your connection.";
+    messageEl.style.color = "red";
+  }
+});
+const timeSelect = document.getElementById("time");
 
+function generateTimeSlots(startHour = 9, endHour = 18) {
+  timeSelect.innerHTML = '<option value="">Select time</option>';
 
-// ——————— DATE & TIME ———————
+  for (let hour = startHour; hour <= endHour; hour++) {
+    const h = String(hour).padStart(2, "0");
+
+    timeSelect.innerHTML += `
+      <option value="${h}:00">${h}:00</option>
+      <option value="${h}:30">${h}:30</option>
+    `;
+  }
+}
+
+generateTimeSlots(9, 18);
 
 const dateInput = document.getElementById("date");
-const timeInput = document.getElementById("time");
 
 function updateMinDate() {
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2, "0");
-  const dd = String(today.getDate()).padStart(2, "0");
+  const now = new Date();
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, "0");
+  const dd = String(now.getDate()).padStart(2, "0");
+
   dateInput.min = `${yyyy}-${mm}-${dd}`;
+
   if (dateInput.value === dateInput.min) {
-    const hh = String(today.getHours()).padStart(2, "0");
-    const min = String(today.getMinutes()).padStart(2, "0");
+    const hh = String(now.getHours()).padStart(2, "0");
+    const min = String(now.getMinutes()).padStart(2, "0");
     timeInput.min = `${hh}:${min}`;
   } else {
     timeInput.min = "00:00";
@@ -188,22 +178,16 @@ function updateMinDate() {
 updateMinDate();
 dateInput.addEventListener("change", updateMinDate);
 
-// ——————— HAMBURGER MENU ———————
-
 const hamburger = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
 
-// Відкриття/закриття меню по кліку на гамбургер
 hamburger.addEventListener("click", (e) => {
-  e.stopPropagation(); // зупиняємо сплив для уникнення миттєвого закриття
+  e.stopPropagation();
   menu.classList.toggle("active");
 });
 
-// Закриття меню при кліку поза ним
 document.addEventListener("click", (e) => {
-  // Якщо клік не всередині меню і не по самій іконці гамбургера
   if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
     menu.classList.remove("active");
   }
 });
-

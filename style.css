@@ -350,7 +350,7 @@ body {
 
 .book-now:hover,
 .book-now:focus {
-  background-color:#241506;
+  background-color: #241506;
   color: #f4f9fa;
   outline: 3px solid #241506;
 }
@@ -689,7 +689,13 @@ body {
     width: 100%;
     height: 60px;
     position: relative;
-    background-color: #e1d2ba;
+    background: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0.05) 50%,
+        rgba(0, 0, 0, 0.35) 100%
+      ),
+      #6f7f73;
   }
 
   .page-nav {

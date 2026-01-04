@@ -46,7 +46,13 @@ body {
 }
 
 .page-header {
-  background-color: #e1d2ba;
+  background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.05) 50%,
+      rgba(0, 0, 0, 0.35) 100%
+    ),
+    #6f7f73;
   top: 0;
   left: 0;
   width: 100%;
@@ -86,7 +92,7 @@ body {
 
 .menu-item:hover,
 .menu-item:focus {
-  color: #fbfaf9;
+  color: #e1ead2;
 }
 
 .menu-cam .page-logo {
@@ -118,6 +124,7 @@ body {
   color: #fbfaf9;
   line-height: 1.2;
   text-align: center;
+  padding-top: 150px;
   margin-bottom: 30px;
 }
 
@@ -125,7 +132,7 @@ body {
   font-size: 1.8rem;
   color: #fbfaf9;
   line-height: 1.6;
-  text-align: start;
+  text-align: center;
   max-width: 900px;
   margin-bottom: 50px;
 }
@@ -140,7 +147,7 @@ body {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .section-one-link:hover,
@@ -343,8 +350,8 @@ body {
 
 .book-now:hover,
 .book-now:focus {
-  color: #38322d;
-  border-color: #241506;
+  background-color:#241506;
+  color: #f4f9fa;
   outline: 3px solid #241506;
 }
 
@@ -501,7 +508,13 @@ body {
 }
 
 .contact {
-  background-color: #e1d2ba;
+  background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.05) 50%,
+      rgba(0, 0, 0, 0.35) 100%
+    ),
+    #6f7f73;
   padding-top: 30px;
 }
 
@@ -509,8 +522,8 @@ body {
   font-size: 14px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #555;
-  margin-bottom: 50px;
+  color: #241506;
+  margin-bottom: 20px;
 }
 
 .contact-container {
@@ -545,13 +558,13 @@ body {
 }
 
 .contact-descr:hover {
-  opacity: 0.6;
+  color: #e1ead2;
 }
 
 .contact-item-info {
   font-size: 13px;
   letter-spacing: 0.04em;
-  color: #555;
+  color: #241506;
   padding-top: 6px;
 }
 

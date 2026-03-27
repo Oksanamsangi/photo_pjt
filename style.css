@@ -48,11 +48,11 @@ body {
 .page-header {
   background: linear-gradient(
       45deg,
-      rgba(0, 0, 0, 0.35) 0%,
-      rgba(0, 0, 0, 0.05) 50%,
-      rgba(0, 0, 0, 0.35) 100%
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.02) 50%,
+      rgba(0, 0, 0, 0.7) 100%
     ),
-    #556254;
+    #043927;
   top: 0;
   left: 0;
   width: 100%;

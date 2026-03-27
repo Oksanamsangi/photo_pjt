@@ -46,13 +46,14 @@ body {
 }
 
 .page-header {
-  background: linear-gradient(
+  background-color: #3D2B1F;
+  background-image:linear-gradient(
       45deg,
       rgba(0, 0, 0, 0.7) 0%,
       rgba(0, 0, 0, 0.02) 50%,
       rgba(0, 0, 0, 0.7) 100%
-    ),
-    #3D2B1F;
+    );
+    
   top: 0;
   left: 0;
   width: 100%;
